@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    background-color: rgb(255, 218, 185);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+#continer-score {
+    padding: 5px;
+    width: 100%;
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 500;
+    text-decoration: underline overline rgb(187, 104, 31);
+    ;
+}
+
+#main-game {
+    display: flex;
+    flex: auto;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#choisse {
+    display: flex;
+    width: 25%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#gameMessage {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex: auto;
+}
+
+.gameBtn {
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    font-size: 20px;
+}
+
+#computerChoice {
+    font-size: 20px;
+}
+
+#gameMessage {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+@media only screen and (max-width: 1420px) {
+    #choisse {
+        flex-direction: column;
+        width: 50%;
+    }
+
+    #player-choisse {
+        display: flex;
+        flex-direction: row;
+    }
+}

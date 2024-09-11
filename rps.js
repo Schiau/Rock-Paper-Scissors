@@ -16,23 +16,23 @@ function playRound(computerChoice, humanChoice) {
     if (computerChoice === humanChoice) {
         return ["It is a tie", 0];
     }
-    if (humanChoice == "rock" && computerChoice == "paper") {
-        return [`You lose! ${computerChoice.toUpperCase()} beats ${humanChoice.toUpperCase()}`, -1];
+    if ((humanChoice == "rock" && computerChoice == "paper") || (humanChoice == "paper" && computerChoice == "scissors") || (humanChoice == "scissors" && computerChoice == "rock")) {
+        return [`You lose! ${choiseToEmoji(computerChoice)} beats ${choiseToEmoji(humanChoice)}`, -1];
     }
-    if (humanChoice == "paper" && computerChoice == "scissors") {
-        return [`You lose! ${computerChoice.toUpperCase()} beats ${humanChoice.toUpperCase()}`, -1];
-    }
-    if (humanChoice == "scissors" && computerChoice == "rock") {
-        return [`You lose! ${computerChoice.toUpperCase()} beats ${humanChoice.toUpperCase()}`, -1];
-    }
-    return [`You win! ${humanChoice.toUpperCase()} beats ${computerChoice.toUpperCase()}`, 1];
+    return [`You win! ${choiseToEmoji(humanChoice)} beats ${choiseToEmoji(computerChoice)}`, 1];
+}
+
+
+function choiseToEmoji(textChoise)
+{
+    if (textChoise == "rock") return "👊"
+    if (textChoise == "paper") return "📝"
+    return "✂"
 }
 
 function getComputerDiv(choices) {
     const newDiv = document.createElement("div");
-    if (choices == "rock") newDiv.textContent = "👊";
-    else if (choices == "paper") newDiv.textContent = "📝";
-    else newDiv.textContent = "✂";
+    newDiv.textContent = "Computer choise: " + choiseToEmoji(choices)
     return newDiv;
 }
 
